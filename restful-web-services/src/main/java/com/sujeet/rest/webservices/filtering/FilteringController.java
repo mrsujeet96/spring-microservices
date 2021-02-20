@@ -9,11 +9,14 @@ import java.util.List;
 @RestController
 public class FilteringController {
 
+//    field1
     @GetMapping("/filtering")
     public SomeBean retrieveSomeBean(){
         return new SomeBean("value1","value2","value3");
 
     }
+
+//    field2
     @GetMapping("/filtering-list")
     public List<SomeBean> retrieveListOfSomeBean(){
         return Arrays.asList( new  SomeBean("value1","value2","value3"),

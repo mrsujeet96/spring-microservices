@@ -1,20 +1,22 @@
-package com.sujeet.rest.webservices.filtering;
+package com.sujeet.rest.webservices.dynamicfiltering;
 
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
 
 //Another way to do filtering
 //@JsonIgnoreProperties(value = {"field1","field2"})
-public class SomeBean {
+
+
+//Dynamic Filtering
+@JsonFilter("SomeBeanFilter")
+public class SomeBeans {
     private String field1;
     private String field2;
-
-    @JsonIgnore
+//   Static Filtering
+//    @JsonIgnore
     private String field3;
 
-    public SomeBean(String field1, String field2, String field3) {
+    public SomeBeans(String field1, String field2, String field3) {
         this.field1 = field1;
         this.field2 = field2;
         this.field3 = field3;
