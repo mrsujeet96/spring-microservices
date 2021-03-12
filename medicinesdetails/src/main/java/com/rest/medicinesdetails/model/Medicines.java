@@ -11,10 +11,7 @@ import java.util.Date;
 @Table(name = "medicines_list")
 public class Medicines {
 
-   @Id
-   @GeneratedValue
     private String c_name;
-
     private String c_batch_no;
     private String d_expiry_date;
     private int n_balance_qty;

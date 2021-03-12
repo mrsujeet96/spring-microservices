@@ -1,4 +1,4 @@
-package com.rest.medicinesdetails.exception;
+package com.rest.medicinesdetails;
 
 public class MedicinesNotFoundException extends Exception{
 
