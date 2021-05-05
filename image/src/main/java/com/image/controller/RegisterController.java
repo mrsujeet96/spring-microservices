@@ -2,6 +2,7 @@ package com.image.controller;
 
 import com.image.Model.User;
 import com.image.service.UserService;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,9 +15,11 @@ public class RegisterController {
 
 
     @GetMapping("/saveuser")
-    public String saveUser(@RequestParam String username, @RequestParam String firstname, @RequestParam String lastname, @RequestParam int age, @RequestParam String password) {
+    public String saveUser(@RequestParam String username, @RequestParam String firstname, @RequestParam String lastname, @RequestParam int age, @RequestParam String password , Model model) {
         User user = new User(username, firstname, lastname, age, password);
+
         userService.saveMyUser(user);
+
         return "User Saved";
     }
 }

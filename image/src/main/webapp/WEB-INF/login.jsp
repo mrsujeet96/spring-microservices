@@ -3,21 +3,24 @@
 <html>
 <style>
     form {
-        background-color: aqua;
+        background-color: white;
         width: 250px;
-        height: 200px;
+        height: 250px;
         border-style: solid;
         border-color: black;
-        padding: 10px;
+        padding: 20px;
+        margin-top: 100px;
     }
 
 
 </style>
 
-<body>
+<body >
 
+<center>
 <div>
     <form action="/login" method="get">
+        <div><h2>Login Page !</h2></div>
         <c:if test="${not empty error}">
             <div style="color: yellow"><h3>${error}</h3></div>
         </c:if>
@@ -31,17 +34,19 @@
             <div style="color: red"><h3>${registrationError}</h3></div>
         </c:if>
 
-        <div>username: <input type="text" name="username" value=""><br></div>
+
+        <div> <input type="text" name="username" placeholder="username" value=""><br></div>
         <div><br></div>
-        <div>password: <input type="password" name="password" value=""></div>
+        <div><input type="password" name="password"  placeholder="password" value=""></div>
         <div><br></div>
-        <div><input type="submit" value="Login" style="background-color: lime"></div>
+        <div><input type="submit" value="Login"  style="background-color: lime"></div>
         <div><br></div>
         <div><input type="button" value="Register" onclick="gotToRegister()" style="background-color: orange"></div>
 
     </form>
 
 </div>
+</center>
 <script>
     function gotToRegister() {
         window.location.href = "/register"
