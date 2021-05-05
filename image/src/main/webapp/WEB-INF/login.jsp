@@ -22,7 +22,7 @@
     <form action="/login" method="get">
         <div><h2>Login Page !</h2></div>
         <c:if test="${not empty error}">
-            <div style="color: yellow"><h3>${error}</h3></div>
+            <div style="color: red"><h3>${error}</h3></div>
         </c:if>
 
         <c:if test="${not empty registerSuccess}">
