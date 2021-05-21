@@ -1,9 +1,17 @@
 package com.employee.model;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
+@Table
 public class Dependants {
 //     First Name, Last Name, Gender, DOB, Relationship
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String firstName;
     private String lastName;
     private String Gender;
@@ -14,12 +22,21 @@ public class Dependants {
 
     }
 
-    public Dependants(String firstName, String lastName, String gender, Date depDob, String relationship) {
+    public Dependants(Long id, String firstName, String lastName, String gender, Date depDob, String relationship) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         Gender = gender;
         this.depDob = depDob;
         this.relationship = relationship;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getFirstName() {

@@ -1,26 +1,44 @@
 package com.employee.model;
 
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name = "Qualification")
 public class EducationalQualification {
+
 //    Type, Start Date, End Date, Type, Institution, Address, Percentage
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     private String type;
     private Date startDate;
     private Date endDate;
     private String institution;
     private String address;
-    private  int percentage;
+    private int percentage;
 
     public EducationalQualification() {
     }
 
-    public EducationalQualification(String type, Date startDate, Date endDate, String institution, String address, int percentage) {
+
+    public EducationalQualification(Long id, String type, Date startDate, Date endDate, String institution, String address, int percentage) {
+        this.id = id;
         this.type = type;
         this.startDate = startDate;
         this.endDate = endDate;
         this.institution = institution;
         this.address = address;
         this.percentage = percentage;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getType() {
