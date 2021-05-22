@@ -11,7 +11,7 @@ public class EducationalQualification {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long edu_id;
     private String type;
     private Date startDate;
     private Date endDate;
@@ -23,8 +23,8 @@ public class EducationalQualification {
     }
 
 
-    public EducationalQualification(Long id, String type, Date startDate, Date endDate, String institution, String address, int percentage) {
-        this.id = id;
+    public EducationalQualification(Long edu_id, String type, Date startDate, Date endDate, String institution, String address, int percentage) {
+        this.edu_id = edu_id;
         this.type = type;
         this.startDate = startDate;
         this.endDate = endDate;
@@ -33,12 +33,12 @@ public class EducationalQualification {
         this.percentage = percentage;
     }
 
-    public Long getId() {
-        return id;
+    public Long getEdu_id() {
+        return edu_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setEdu_id(Long edu_id) {
+        this.edu_id = edu_id;
     }
 
     public String getType() {

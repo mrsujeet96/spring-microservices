@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 
@@ -26,12 +27,12 @@ public class EmployeeService {
     public  void saveEmployee(Employee employee) {
         employeeRepo.save(employee);
     }
-//    public Optional<Doc> getFile(Integer fileId) {
-//        return docRepository.findById(fileId);
-//    }
 
-    public Optional<Employee> getDetails(Long id){
-        return employeeRepo.findById(id);
+    public Optional<Employee> getDetails(Long emp_id){
+        return employeeRepo.findById(emp_id);
+    }
+    public List<Employee> getAllDetails(){
+        return employeeRepo.findAll();
     }
 
 

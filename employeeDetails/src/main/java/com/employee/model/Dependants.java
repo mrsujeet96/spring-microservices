@@ -8,7 +8,7 @@ public class Dependants {
 //     First Name, Last Name, Gender, DOB, Relationship
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long dep_id;
     private String firstName;
     private String lastName;
     private String Gender;
@@ -19,8 +19,8 @@ public class Dependants {
 
     }
 
-    public Dependants(Long id, String firstName, String lastName, String gender, Date depDob, String relationship) {
-        this.id = id;
+    public Dependants(Long dep_id, String firstName, String lastName, String gender, Date depDob, String relationship) {
+        this.dep_id = dep_id;
         this.firstName = firstName;
         this.lastName = lastName;
         Gender = gender;
@@ -28,12 +28,12 @@ public class Dependants {
         this.relationship = relationship;
     }
 
-    public Long getId() {
-        return id;
+    public Long getDep_id() {
+        return dep_id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setDep_id(Long dep_id) {
+        this.dep_id = dep_id;
     }
 
     public String getFirstName() {

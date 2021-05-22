@@ -9,5 +9,5 @@ import java.util.Optional;
 @Repository
 public interface EmployeeRepo  extends JpaRepository<Employee ,Long> {
 
-//    Employee findByOne(Long id);
+//    Employee findByOne(Long emp_id);
 }
