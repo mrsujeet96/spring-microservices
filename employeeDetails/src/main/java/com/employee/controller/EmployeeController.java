@@ -7,6 +7,7 @@ import com.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 
@@ -22,6 +23,11 @@ public class EmployeeController {
     @GetMapping("/{emp_id}")
     public Optional<Employee> getEmployeeDetails(@PathVariable Long emp_id){
         return employeeService.getDetails(emp_id);
+    }
+
+    @GetMapping("/employee1")
+    public List<Employee> getALLEmp(){
+        return employeeService.getAllDetails();
     }
 
 
