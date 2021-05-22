@@ -1,12 +1,9 @@
 package com.employee.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
-@Table
+@Entity
 public class Dependants {
 //     First Name, Last Name, Gender, DOB, Relationship
     @Id
