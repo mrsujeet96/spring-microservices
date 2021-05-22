@@ -5,13 +5,4 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EmployeeRepo  extends JpaRepository<Employee ,Long> {
 
-
-
-
-
-
-
-    static Employee findByOne(Long id) {
-        return null;
-    }
 }

@@ -6,6 +6,7 @@ import com.employee.repository.EmployeeRepo;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -19,6 +20,10 @@ public class EmployeeService {
 
     public void saveEmployee(Employee employee) {
         employeeRepo.save(employee);
+    }
+    public static Optional<Employee> findById(Long id) {
+
+        return employeeRepo.findById(id);
     }
 
 }
