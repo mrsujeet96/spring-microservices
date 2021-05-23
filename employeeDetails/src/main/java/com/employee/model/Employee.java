@@ -4,7 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.Date;
+
+import java.sql.Date;
 
 @Entity
 public class Employee {
@@ -29,11 +30,11 @@ public class Employee {
     private String bloodGroup;
     private String address;
 
+
     public Employee() {
     }
 
-    public Employee(Long emp_id, String firstName, String lastName, int employmentId, Date startDate, String designation, String department, Date endDate, String status, Date dob, String reportingManager, String gender, String bloodGroup, String address) {
-        this.emp_id = emp_id;
+    public Employee( String firstName, String lastName, int employmentId, Date startDate, String designation, String department, Date endDate, String status, Date dob, String reportingManager, String gender, String bloodGroup, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employmentId = employmentId;

@@ -1,5 +1,9 @@
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -19,8 +23,7 @@
 </style>
 <body>
 <div>
-    <form>
-<!--        //    Type, Start Date, End Date, Type, Institution, Address, Percentage-->
+    <form th:action="@{/edu}"  method="post">
         <div><input type="text" name="type" placeholder="Type" size="50" value=""><br><br></div>
         <div>Start date:<span style="padding-left:85px">End Date:</span> </div>
         <div> <input type="date" name="startDate" placeholder="Start date" value="">

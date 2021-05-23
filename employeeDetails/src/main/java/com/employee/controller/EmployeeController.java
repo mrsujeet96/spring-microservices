@@ -5,13 +5,15 @@ import com.employee.model.Employee;
 import com.employee.repository.EmployeeRepo;
 import com.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
 
-@RestController
+@Controller
 public class EmployeeController {
 
     @Autowired
@@ -30,13 +32,18 @@ public class EmployeeController {
         return employeeService.getAllDetails();
     }
 
+    @RequestMapping("/")
+    public String homePage(){
+        return "Employee1";
+    }
 
 
     @PostMapping("/employee")
-    public String postEmployeeDetails(@ModelAttribute Employee employee) {
+    public  String SaveEmpDetils(@ModelAttribute Employee employee){
         employeeService.saveEmployee(employee);
-        return " Employee Details Successfully save";
+        return "Dependant";
     }
+
 
 
 }

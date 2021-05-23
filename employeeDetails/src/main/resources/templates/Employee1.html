@@ -1,4 +1,7 @@
+
+
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,16 +22,17 @@
 
 </style>
 <body>
-<!-- First Name, Last Name, Employment ID, Start Date, Designation, Department, End
-//    date, Status, DOB, Reporting Manager, gender, blood group, address
--->
+<!--action="/edu"-->
 
 <div>
-    <form action="/" method="post">
+    <form method="post" th:action="@{/employee}" >
 
         <div><input type="text" name="firstName" placeholder="First Name" size="40" value=""><br><br></div>
         <div><input type="text" name="lastName" placeholder="Last Name"size="40" value=""><br><br></div>
         <div> <input type="text" name="employmentID" placeholder="Employment ID"vocab="" size="40" value=""><br></div>
+        <div>Start date:<span style="padding-left:85px">End Date:</span> </div>
+        <div> <input type="date" name="startDate" placeholder="Start date" value="">
+            <input type="date" name="endDate" placeholder="End Date" value=""><br><br></div>
 
         <div> <input type="text" name="designation" placeholder="Designation" size="40" value=""><br><br></div>
         <div> <input type="text" name="department" placeholder="Department" size="40" value=""><br><br></div>
@@ -41,13 +45,19 @@
         <div><select name="Gender" placeholder="Gender"><option>Male<option>Female<option>Other</option></select><br/><br></div>
         <div><input type="text" name="bloodGroup" placeholder="Blood Group"  size="40"value=""><br><br></div>
         <div> <input type="text" name="address" placeholder="Address"  size="40" value=""><br><br></div>
-        <div><input type="submit" value="Next" style="background-color: deepskyblue"></div>
+        <div><input type="submit" value="Next"  onclick="/dependant" style="background-color: deepskyblue"></div>
 
 
 
 
     </form>
 </div>
+
+<script>
+
+
+
+</script>
 
 </body>
 </html>

@@ -1,7 +1,7 @@
 package com.employee.model;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.sql.Date;
 
 @Entity
 @Table(name = "Qualification")
@@ -18,6 +18,7 @@ public class EducationalQualification {
     private String institution;
     private String address;
     private int percentage;
+
 
     public EducationalQualification() {
     }

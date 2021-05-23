@@ -4,12 +4,13 @@ import com.employee.model.Dependants;
 import com.employee.repository.DependantsRepo;
 import com.employee.service.DependantsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class DepController {
 
     @Autowired
@@ -32,8 +33,9 @@ public class DepController {
     @PostMapping("/dep")
     public String postDepDetails(@ModelAttribute Dependants dependants) {
         dependantsService.saveDependant(dependants);
-        return " Dependants Details Successfully save";
+        return "Qualification";
     }
+
 
 
 

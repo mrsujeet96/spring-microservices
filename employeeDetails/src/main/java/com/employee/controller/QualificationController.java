@@ -5,15 +5,16 @@ import com.employee.model.EducationalQualification;
 import com.employee.repository.QualificationRepo;
 import com.employee.service.QualificationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+
 
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Controller
 public class QualificationController {
 
     @Autowired
@@ -33,10 +34,10 @@ public class QualificationController {
         return qualificationService.getAllQuaDetails();
     }
 
-    @PostMapping("edu")
+    @PostMapping("/edu")
     public String PostEduDetails(@ModelAttribute EducationalQualification educationalQualification){
         qualificationService.saveQualification(educationalQualification);
-        return "Educational Qualification Details Successfully save";
+        return "success";
     }
 
 

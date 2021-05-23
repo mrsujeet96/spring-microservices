@@ -1,4 +1,8 @@
+
+
+
 <!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,9 +24,9 @@
 
 </style>
 <body>
-<!--//     First Name, Last Name, Gender, DOB, Relationship-->
+<!--ction="/dep" method="post"-->
       <div>
-          <form action="/" method="post">
+          <form method="post" th:action="@{/dep}">
               <div><input type="text" name="firstName" placeholder="First Name"   value=""><br><br></div>
               <div><input type="text" name="lastName" placeholder="Last Name" value=""><br><br></div>
               <div>Gender</div>
