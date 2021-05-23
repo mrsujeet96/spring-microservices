@@ -4,31 +4,44 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    form {
+        background-color: white;
+        width: 400px;
+        height: 100%;
+        border-style: solid;
+        border-color: black;
+        padding: 20px;
+        margin-left: 250px;
+
+    }
+
+
+</style>
 <body>
 <!-- First Name, Last Name, Employment ID, Start Date, Designation, Department, End
 //    date, Status, DOB, Reporting Manager, gender, blood group, address
 -->
 
 <div>
-    <form>
+    <form action="/" method="post">
 
-        <div><input type="text" name="firstName" placeholder="First Name" value=""><br><br></div>
-        <div><input type="text" name="lastName" placeholder="Last Name" value=""><br><br></div>
-        <div> <input type="text" name="employmentID" placeholder="Employment ID" value=""><br><br></div>
-        <div>Start date:</div>
-        <div> <input type="date" name="startDate" placeholder="Start date" value=""><br><br></div>
-        <div> <input type="text" name="designation" placeholder="Designation" value=""><br><br></div>
-        <div> <input type="text" name="department" placeholder="Department" value=""><br><br></div>
-        <div>End Date</div>
-        <div> <input type="date" name="endDate" placeholder="End Date" value=""><br><br></div>
-        <div> <input type="text" name="status" placeholder="Status" value=""><br><br></div>
+        <div><input type="text" name="firstName" placeholder="First Name" size="40" value=""><br><br></div>
+        <div><input type="text" name="lastName" placeholder="Last Name"size="40" value=""><br><br></div>
+        <div> <input type="text" name="employmentID" placeholder="Employment ID"vocab="" size="40" value=""><br></div>
+
+        <div> <input type="text" name="designation" placeholder="Designation" size="40" value=""><br><br></div>
+        <div> <input type="text" name="department" placeholder="Department" size="40" value=""><br><br></div>
+
+        <div> <input type="text" name="status" placeholder="Status" size="40" value=""><br></div>
         <div>Date of Birth:</div>
         <div> <input type="date" name="dob" placeholder="DOB" value=""><br><br></div>
-        <div> <input type="text" name=" reportingManager" placeholder=" Reporting Manager" value=""><br><br></div>
+        <div> <input type="text" name=" reportingManager" placeholder=" Reporting Manager" size="40"value=""><br></div>
         <div>Gender</div>
-        <div><select name="Gender" placeholder="Gender"><option>Male<option>Female</select><br/><br></div>
-        <div> <input type="text" name="lastName" placeholder="Last Name" value=""><br><br></div>
-        <div> <input type="text" name="lastName" placeholder="Last Name" value=""><br><br></div>
+        <div><select name="Gender" placeholder="Gender"><option>Male<option>Female<option>Other</option></select><br/><br></div>
+        <div><input type="text" name="bloodGroup" placeholder="Blood Group"  size="40"value=""><br><br></div>
+        <div> <input type="text" name="address" placeholder="Address"  size="40" value=""><br><br></div>
+        <div><input type="submit" value="Next" style="background-color: deepskyblue"></div>
 
 
 
