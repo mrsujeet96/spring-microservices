@@ -2,12 +2,13 @@ package com.employee.model;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Qualification")
 public class EducationalQualification {
 
-//    Type, Start Date, End Date, Type, Institution, Address, Percentage
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,13 +19,12 @@ public class EducationalQualification {
     private String institution;
     private String address;
     private int percentage;
-
+    private int employmentId;
 
     public EducationalQualification() {
     }
 
-
-    public EducationalQualification(Long edu_id, String type, Date startDate, Date endDate, String institution, String address, int percentage) {
+    public EducationalQualification(Long edu_id, String type, Date startDate, Date endDate, String institution, String address, int percentage, int employmentId) {
         this.edu_id = edu_id;
         this.type = type;
         this.startDate = startDate;
@@ -32,6 +32,7 @@ public class EducationalQualification {
         this.institution = institution;
         this.address = address;
         this.percentage = percentage;
+        this.employmentId = employmentId;
     }
 
     public Long getEdu_id() {
@@ -88,5 +89,13 @@ public class EducationalQualification {
 
     public void setPercentage(int percentage) {
         this.percentage = percentage;
+    }
+
+    public int getEmploymentId() {
+        return employmentId;
+    }
+
+    public void setEmploymentId(int employmentId) {
+        this.employmentId = employmentId;
     }
 }

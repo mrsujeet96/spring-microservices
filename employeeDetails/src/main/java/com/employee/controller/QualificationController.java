@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 import java.util.List;
@@ -23,18 +24,18 @@ public class QualificationController {
     private QualificationService qualificationService;
 
 
-    @GetMapping("/edu_id")
+    @RequestMapping("/edu_id")
     public Optional<EducationalQualification> getEduDetails(Long edu_id){
         return qualificationService.getQuaDetails(edu_id);
 
     }
 
-    @GetMapping("/edu1")
+    @RequestMapping("/edu1")
     public List<EducationalQualification> getAllEduDetails(){
         return qualificationService.getAllQuaDetails();
     }
 
-    @PostMapping("/edu")
+    @RequestMapping("/edu")
     public String PostEduDetails(@ModelAttribute EducationalQualification educationalQualification){
         qualificationService.saveQualification(educationalQualification);
         return "success";

@@ -14,18 +14,22 @@ public class Dependants {
     private String Gender;
     private Date depDob;
     private String relationship;
+    private int employmentId;
+
+
 
     public Dependants() {
 
     }
 
-    public Dependants(Long dep_id, String firstName, String lastName, String gender, Date depDob, String relationship) {
+    public Dependants(Long dep_id, String firstName, String lastName, String gender, Date depDob, String relationship, int employmentId) {
         this.dep_id = dep_id;
         this.firstName = firstName;
         this.lastName = lastName;
         Gender = gender;
         this.depDob = depDob;
         this.relationship = relationship;
+        this.employmentId = employmentId;
     }
 
     public Long getDep_id() {
@@ -74,5 +78,13 @@ public class Dependants {
 
     public void setRelationship(String relationship) {
         this.relationship = relationship;
+    }
+
+    public int getEmploymentId() {
+        return employmentId;
+    }
+
+    public void setEmploymentId(int employmentId) {
+        this.employmentId = employmentId;
     }
 }

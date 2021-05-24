@@ -1,11 +1,9 @@
 package com.employee.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 import java.sql.Date;
+import java.util.List;
 
 @Entity
 public class Employee {
@@ -13,11 +11,10 @@ public class Employee {
 //    First Name, Last Name, Employment ID, Start Date, Designation, Department, End
 //    date, Status, DOB, Reporting Manager, gender, blood group, address
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long emp_id;
+
     private String firstName;
     private String lastName;
+    @Id
     private int employmentId;
     private Date startDate;
     private String designation;
@@ -30,11 +27,20 @@ public class Employee {
     private String bloodGroup;
     private String address;
 
+    @OneToMany(targetEntity = Dependants.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "employmentId", referencedColumnName = "employmentId")
+    private List<Dependants> dependantsList;
+
+    @OneToMany(targetEntity = EducationalQualification.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "employmentId", referencedColumnName = "employmentId")
+    private List<EducationalQualification> qualifications;
+
+
 
     public Employee() {
     }
 
-    public Employee( String firstName, String lastName, int employmentId, Date startDate, String designation, String department, Date endDate, String status, Date dob, String reportingManager, String gender, String bloodGroup, String address) {
+    public Employee(String firstName, String lastName, int employmentId, Date startDate, String designation, String department, Date endDate, String status, Date dob, String reportingManager, String gender, String bloodGroup, String address, List<Dependants> dependantsList, List<EducationalQualification> qualifications) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.employmentId = employmentId;
@@ -48,14 +54,8 @@ public class Employee {
         this.gender = gender;
         this.bloodGroup = bloodGroup;
         this.address = address;
-    }
-
-    public Long getEmp_id() {
-        return emp_id;
-    }
-
-    public void setEmp_id(Long emp_id) {
-        this.emp_id = emp_id;
+        this.dependantsList = dependantsList;
+        this.qualifications = qualifications;
     }
 
     public String getFirstName() {
