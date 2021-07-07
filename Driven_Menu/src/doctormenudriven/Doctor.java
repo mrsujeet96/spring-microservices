@@ -1,5 +1,7 @@
 package doctormenudriven;
 
+import java.util.EnumMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class Doctor {
@@ -9,6 +11,12 @@ public class Doctor {
     String experience;
     String speciality;
     int fees;
+
+    public enum Days {
+        Monday, Tuesday, Wednesday, Thursday ,Friday,Saturday;
+    };
+    EnumMap<Days,String> map=new EnumMap<>(Days.class);
+
 
 
 
